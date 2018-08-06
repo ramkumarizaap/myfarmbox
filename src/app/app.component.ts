@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ProductListingPage } from '../pages/product-listing/product-listing';
+import { ProductViewPage } from '../pages/product-view/product-view';
 import { LoginPage } from '../pages/account/login/login';
 import { HowItWorks } from '../pages/how-it-works/how-it-works';
 import { AboutUs } from '../pages/about-us/about-us';
@@ -17,7 +17,7 @@ import { ProductService } from '../services/product.service';
 export class MyApp implements OnInit {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = ProductViewPage;
 
   pages: Array<{title: string, component: any,icon:string}>;
 

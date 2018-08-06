@@ -13,6 +13,7 @@ import { AboutUs } from '../pages/about-us/about-us';
 import { WhatWeDeliver } from '../pages/what-we-deliver/what-we-deliver';
 import { ContactUs } from '../pages/contact-us/contact-us';
 import { ProductListingPage } from '../pages/product-listing/product-listing';
+import { ProductViewPage } from '../pages/product-view/product-view';
 
 import { FooterPage } from '../components/partials/footer/footer';
 import { HeaderPage } from '../components/partials/header/header';
@@ -44,7 +45,8 @@ import { PipesModule } from 'w-ng5';
     FooterPage,
     ProductListingPage,
     ErrorPage,
-    FilterPage
+    FilterPage,
+    ProductViewPage
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,8 @@ import { PipesModule } from 'w-ng5';
     FooterPage,
     ProductListingPage,
     ErrorPage,
-    FilterPage
+    FilterPage,
+    ProductViewPage
   ],
   providers: [
     StatusBar,

@@ -7,6 +7,7 @@ import { AppSettingsService } from '../../services/app-settings.service';
 import { ProductService } from '../../services/product.service';
 
 import { FilterPage } from '../../components/filter-page/filter';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'page-product-listing',
@@ -81,20 +82,38 @@ export class ProductListingPage implements OnInit {
   filterBy(){
     let pro = this.products;
     if(this.filters){
+      let a: any = [];
+      let b: any = [];
       this.products = [];
       pro.forEach(element => {
         if(element.price >= this.filters.price.lower && element.price <= this.filters.price.upper)
           this.products.push(element);
       });
+     /* a.forEach((ele,index) => {
+        ele.attributes.forEach(attr => {
+          let ck: any =  this.containsAny(this.filters.size,attr.options);
+          if(ck === true)
+            b.push(ele);
+        });
+        
+      });
+      this.products = b?b:a;*/
+      console.log('Applied Filter',this.products);
     }
     else{
       this.loadProducts();
     }
   }
 
+  containsAny(source,target){
+    var result = source.filter(function(item){ return target.indexOf(item) > -1});   
+    return (result.length > 0)?true:false;  
+  }
+
   openModal(){
     let modal = this.modalCtrl.create(FilterPage,{name:this.filters});
     modal.onDidDismiss(data => {
+      this.loadProducts();
       console.log('Filter',data);
       this.filters = data;
       this.filterBy();

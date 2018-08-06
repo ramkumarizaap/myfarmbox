@@ -15,7 +15,7 @@
     </ion-list>
   </div>
   <div class="product-list">
-    <ion-list>
+    <ion-list *ngIf="products.length">
       <ion-item *ngFor="let prod of products">
         <div class="img">
           <img [src]="prod.images[0].src">
@@ -26,5 +26,6 @@
         </div>
       </ion-item>
     </ion-list>
+    <page-error *ngIf="products.length === 0"></page-error>
   </div>
 </ion-content>
