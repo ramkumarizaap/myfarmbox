@@ -16,7 +16,7 @@
   </div>
   <div class="product-list">
     <ion-list *ngIf="products.length">
-      <ion-item *ngFor="let prod of products">
+      <ion-item *ngFor="let prod of products" (click)="openProduct(prod.id)">
         <div class="img">
           <img [src]="prod.images[0].src">
         </div>

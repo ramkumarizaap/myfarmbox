@@ -1,5 +1,6 @@
 import { Component,ViewChild,OnInit } from '@angular/core';
 import { NavController, NavParams,ActionSheetController,ModalController } from 'ionic-angular';
+import { ProductViewPage } from '../product-view/product-view';
 // import { InAppBrowser } from '@ionic-native/in-app-browser';
 // import { Slides } from 'ionic-angular';
 import { AppSettingsService } from '../../services/app-settings.service';
@@ -19,7 +20,7 @@ export class ProductListingPage implements OnInit {
   baseURL: string;
   constructor(public params: NavParams,public appSettings: AppSettingsService,
       public productService: ProductService,public actionSheet: ActionSheetController,
-    public modalCtrl: ModalController){
+    public modalCtrl: ModalController,public navCtrl: NavController){
     console.log('Params',this.params);
     this.baseURL = this.appSettings.getBaseUrl();
   }
@@ -119,6 +120,11 @@ export class ProductListingPage implements OnInit {
       this.filterBy();
     });
     modal.present();
+  }
+
+  openProduct(id:number){
+    console.log('Product Id',id);
+    this.navCtrl.push(ProductViewPage,{id:id});
   }
 
 }
