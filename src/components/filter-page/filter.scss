@@ -1,0 +1,67 @@
+page-filter{
+ 
+  background: #fff !important;
+  .close-btn{
+    color: #fff !important;
+  }
+
+  .price-filter{
+    border-bottom: 2px solid #ccc;
+    box-shadow: 0px 1px 5px 2px #000;
+  }
+  ion-list-header.price-text{
+    margin: 0 !important;
+    h4{
+      font-weight: bold !important;
+      color: #000000;
+      width: 50%;
+      float: left;
+    }
+    h4:last-child{
+      text-align: right;
+    }
+  }
+  
+
+  /*Size Filter*/
+
+  .size-filter{
+    box-shadow: 0px 1px 5px 2px #000;
+    display: table;
+    width: 100%;
+    ion-list-header{
+      margin-bottom: 0 !important;
+    }
+    margin-top: 50px;
+    ion-item{
+      font-size: 13px !important;
+      float: left;
+      width: 32% !important;
+      .item-inner{
+        border: none !important;
+      }
+    }
+    ion-checkbox{
+      margin: 9px 10px 9px 4px !important;
+    }
+    h4{
+      font-weight: bold !important;
+      color: #000000;
+    }
+  }
+
+
+  footer{
+    border-top: 1px solid #ccc;
+    background: #fff;
+    position: fixed;
+    box-shadow: 0px 0px 5px 2px #000;
+    bottom: 0;
+    width: 100%;
+    .apply-btn{
+      float: right;
+      margin-right: 20px;
+      background: #f5a42b;
+    }
+  }
+}

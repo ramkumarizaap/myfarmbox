@@ -1,0 +1,45 @@
+page-how-it-works{
+	h2{
+			padding-top: 20px;
+	}
+	p{
+		font-size: 12px;
+	}
+	ion-content div.how-works{
+		padding-bottom: 40px !important;
+	}
+	div.how-works div.work-models{
+		padding: 0px 10px 10px 10px !important;
+		position: relative;
+		top: 50px;
+		background: #eee !important;
+		text-align: center !important;
+		z-index: 1;
+		margin-bottom: 50px !important;
+	}
+	
+	div.how-works div.work-models div.work-icon{
+		border: 4px solid #94c618;
+		background: #f39200;
+		height: 70px;
+		width: 70px;
+		position: relative;
+		margin: 0 auto;
+		vertical-align: middle;
+		top: -40px;
+		z-index: 9999999;
+		border-radius: 100px;
+	}
+	div.how-works div.work-models div.work-icon img{
+		color: #fff !important;
+		height: 40px;
+		width: 40px;
+		vertical-align: middle;
+		margin: 10px auto;
+	}
+	div.how-works div.work-models div.work-text{
+		position: relative;
+		top: -15px;
+	}
+
+}

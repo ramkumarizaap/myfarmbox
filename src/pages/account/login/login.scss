@@ -1,0 +1,71 @@
+page-login{
+    ion-content{
+        
+        background-image: url('assets/imgs/bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .item-inner ion-label{
+        margin: 0;
+    }
+    .bg{
+        background-color: black !important;
+        opacity: 0.5;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+    }
+    .container{
+        padding-top: 10px;
+    }
+    .container .logo{
+        width: 80px;
+        margin: 0 auto;
+    }
+    .main-content{
+        padding: 0px 20px 0px 20px;
+        // #F7941E
+    }
+    ion-item{
+        background-color: transparent !important;
+        padding: 0 !important;
+    }
+    ion-item .item-inner{
+        padding-right: 0px !important;
+    }
+    
+    ion-input{
+        color: #fff;
+    }
+    ion-item.input-has-focus ion-label{
+        color: #F7941E !important;
+        font-weight: bold
+    }
+    ion-item.input-has-focus .item-inner,ion-item.input-has-focus .item-wrapper,ion-item.input-has-focus ion-input{
+        border-bottom: 1px solid #F7941E !important;
+    }
+    .btn{
+        
+        margin-top: 20px;
+    }
+    .btn-orange{
+        background:  #F7941E;
+    }
+    .btn-fb{
+        background: #3b5998;
+    }
+    .btn-google{
+        background: #de483a;
+    }
+    .error p{
+        color: #F7941E;
+    }
+    .password-icon{
+        position: relative;
+        font-size:24px;
+        margin-top: -30px;
+        margin-right: 10px;
+        color:#fff;
+    }
+}

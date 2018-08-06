@@ -1,0 +1,72 @@
+<ion-header>
+  <expandable-header [scrollArea]="mycontent" headerHeight="60" (dyClass)="dyClassName">
+    <page-header></page-header>
+  </expandable-header>
+  <ion-searchbar  class="searchfield" [(ngModel)]="searchPro" type="text" placeholder="Search for Boxes, Veggies and Fruits..."></ion-searchbar>
+  <ion-list id="search_list" class="search-list {{dyClassName}}" *ngIf="searchPro">
+    <ion-item *ngFor="let p of allProducts |  filter:[{field:'name', value: searchPro}]">
+      <img [src]="p.images[0].src">
+      {{p.name}} - <strong>Rs.{{p.price}}</strong>
+    </ion-item>
+    <ion-item *ngIf="!allProducts.length">
+      No items found.
+    </ion-item>
+  </ion-list>
+  <ion-list class="menu-ul">
+    <ion-item (click)="goPages('Boxes')">
+      <img src="{{baseURL}}src/assets/icon/box.png">
+      Boxes
+    </ion-item>
+    <ion-item (click)="goPages('Salads')">
+        <img src="{{baseURL}}src/assets/icon/salad.png">
+      Salads
+    </ion-item>
+    <ion-item (click)="goPages('Vegetables')">
+        <img src="{{baseURL}}src/assets/icon/vegetable.png">
+      Vegetables
+    </ion-item>
+    <ion-item (click)="goPages('Fruit')">
+        <img src="{{baseURL}}src/assets/icon/fruits.png">
+      Fruits
+    </ion-item>
+  </ion-list>
+</ion-header>
+
+<ion-content padding fullscreen #mycontent>
+  <ion-slides>
+    <ion-slide>
+      <img src="https://myfarmbox.in/wp-content/uploads/2016/03/fruit-bg-1-4.jpg">
+    </ion-slide>
+    <ion-slide>
+        <img src="https://myfarmbox.in/wp-content/uploads/2016/03/img_lookbook_detail-2.jpg">
+    </ion-slide>
+  </ion-slides>
+  <div class="best-for">
+    <h4><strong>Best For You?</strong></h4>
+    <p>Whether you like to cook, wish you had time to cook or hate to cook, we’ve got a box type 
+      that will help you eat and be well! It’s like having a farmer as your personal produce
+      shopper — and you still get the final say of what goes into each delivery.</p>
+  </div>
+  <div class="card-background-page">
+    <div class="container">
+      <h3 class="wrapper-title">Vegetable Packs</h3>
+      <ion-list *ngIf="vegBoxes">
+        <ion-item *ngFor="let box of vegBoxes">
+          <h3 class="list-title">{{box.name}}</h3>
+          <h4 class="price"> Pack Rs.{{box.price}} <span class="pack"> /pack</span></h4>
+          <div class="img">
+            <img class="alignnone size-large wp-image-2467" [src]="box.images[0].src" alt="">
+          </div>
+          <p class="desc" [innerHTML]="box.short_description"></p>
+          <button class="btn pack-btn">Choose Pack <ion-icon name="ios-arrow-round-forward"></ion-icon></button>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+  <div class="how-deliver">
+    <img src="https://myfarmbox.in/wp-content/uploads/2016/03/icon-truck-1-1.png" alt="">
+    <p class="title">We deliver your boxes direct to your door. YOU enjoy the convenience of farm to table freshness!</p>
+    <p class="small">My Farmbox fruits and veg boxes delivered weekly, Direct farm to your door… Now ain’t that a time saver!!</p>
+  </div>
+  <page-footer></page-footer>
+</ion-content>

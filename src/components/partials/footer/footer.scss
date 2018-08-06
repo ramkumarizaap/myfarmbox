@@ -1,0 +1,76 @@
+page-footer{
+  footer{
+		background: #f3f3f3;
+		margin-top: 210px;
+		position: relative;
+		padding-top: 40px;
+		color: #666;
+		ion-list{
+			margin: 0 !important;
+		}
+		ion-list ion-item{
+			background: transparent !important;
+		}
+		ion-list ion-item .item-inner{
+			border: none !important;
+		}
+		ion-list ion-item p{
+			white-space: initial;
+			text-align: justify;
+			font-size: 12px !important;
+		}
+		ion-list ion-item h3{
+			font-size: 18px !important;
+			padding-bottom: 10px;
+		}
+		ion-item.links{
+			a{
+				text-decoration: none;
+				width: 100%;
+				font-size: 12px;
+				display: block;
+				padding-bottom: 5px;
+				color: #666 !important;
+			}
+		}
+		ion-item.social{
+			ion-icon{
+				padding-right: 5px;
+				color: #666;
+			}
+		}
+		ion-item.subscribe{
+			input.input-control{
+				padding: 10px;
+				font-size: 12px;
+				width: 100%;
+				font-style: italic;
+				clear: both;
+				border:1px solid #94c618;
+			}
+			.btn.subscribe-btn{
+				padding: 10px;
+				background: #94c618;
+				font-weight: bold;
+				color: #fff;
+				display: block;
+				margin-top: 10px;
+			}
+			ion-icon{
+				font-size: 20px;
+				font-weight: bold;
+				position: relative;
+				top: 5px;
+			}
+		}
+	}
+	footer::before{
+		content: "";
+		width: 100%;
+		height: 160px;
+		background: url('https://myfarmbox.in/wp-content/themes/tomoko/assets/images/bg-footer.png') center bottom no-repeat;
+		position: absolute;
+		top: -157px;
+		left: 0;
+	}
+}

@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>myFarmBox</ion-title>
+      <ion-buttons end>
+          <button ion-button tappable>
+          <ion-icon name="ios-cart"></ion-icon>
+          </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+    
+<ion-content padding fullscreen #mycontent>
+  <h2>Contact Us</h2>
+  <img src="https://myfarmbox.in/wp-content/uploads/2018/05/68886594-farmer-wallpapers-Copy.jpg">
+  <h5 text-center><strong>We like say</strong></h5>
+  <p>    
+    A online store for people who want to buy less, but better.
+  </p>
+  <h6><strong>Get It Touch</strong></h6>
+  <form [formGroup]="contactForm" (ngSubmit)="doContact()">
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="ios-contact" item-start class="text-primary"></ion-icon>
+        Name
+      </ion-label>
+      <ion-input formControlName="name" type="text"></ion-input>
+    </ion-item>
+    <ion-item class="error" no-lines no-padding *ngIf="contactForm.controls.name.errors?.required && (contactFormSubmitted || contactForm.controls.name.dirty || contactForm.controls.name.touched)">
+      <p ion-text text-wrap>Please Enter Your Name</p>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+        Email
+      </ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+    <ion-item class="error" no-lines no-padding *ngIf="contactForm.controls.email.errors?.required && (contactFormSubmitted || contactForm.controls.email.dirty || contactForm.controls.email.touched)">
+      <p ion-text text-wrap>Please Enter Email-ID</p>
+    </ion-item>
+    <ion-item class="error" no-lines no-padding *ngIf="contactForm.controls.email.errors?.email  && contactForm.controls.email.value!='' && ( contactFormSubmitted || contactForm.controls.email.dirty)">
+      <p ion-text text-wrap>Please use correct email format, e.g.:someone@domain.com.</p>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="ios-help-circle" item-start class="text-primary"></ion-icon>
+        How we can help you?
+      </ion-label>
+      <ion-input formControlName="subject" type="text"></ion-input>
+    </ion-item>
+    <ion-item class="error" no-lines no-padding *ngIf="contactForm.controls.subject.errors?.required && (contactFormSubmitted || contactForm.controls.subject.dirty || contactForm.controls.subject.touched)">
+        <p ion-text text-wrap>Please Enter Subject</p>
+      </ion-item>
+    <ion-item>
+    <ion-label floating>
+      <ion-icon name="ios-create" item-start class="text-primary"></ion-icon>
+        Additional Detail
+      </ion-label>
+      <ion-textarea formControlName="message" rows="5"></ion-textarea>
+    </ion-item>
+    <ion-item class="error" no-lines no-padding *ngIf="contactForm.controls.message.errors?.required && (contactFormSubmitted || contactForm.controls.message.dirty || contactForm.controls.message.touched)">
+      <p ion-text text-wrap>Please Enter the Additional Detail</p>
+    </ion-item>
+    <button type="submit" class="btn btn-orange" ion-button block>Submit&nbsp;<ion-icon name="ios-redo"></ion-icon></button>
+  </form>
+  <br>
+  <h6><strong>Contact us</strong></h6>
+  <p>Out Store</p>
+  <p><ion-icon name="ios-pin"></ion-icon>&nbsp;#2930/1A, 2nd Main, Chamundipuram, Mysore, Karnataka, India </p>
+  <p><ion-icon name="ios-call"></ion-icon>&nbsp;+91 638 374 3335</p>
+  <p><ion-icon name="mail"></ion-icon>&nbsp;info@myfarmbox.in</p>
+  <p>
+    <ion-icon name="logo-facebook"></ion-icon>&nbsp;
+    <ion-icon name="logo-twitter"></ion-icon>&nbsp;
+    <ion-icon name="logo-googleplus"></ion-icon>&nbsp;
+    <ion-icon name="logo-pinterest"></ion-icon>&nbsp;
+  </p>
+</ion-content>

@@ -1,0 +1,26 @@
+page-contact-us{
+  h2{
+    text-transform: uppercase;
+    padding-top: 20px;
+    text-align: center;
+  }
+  .btn{        
+    margin-top: 20px;
+  }
+  .btn-orange{
+      background:  #F7941E;
+  }
+  .error p{
+    color: #F7941E;
+  }
+  ion-item{
+    padding-left: 0px !important;
+  }
+  ion-item.input-has-focus ion-label{
+    color: #F7941E !important;
+    font-weight: bold
+}
+ion-item.input-has-focus .item-inner,ion-item.input-has-focus .item-wrapper,ion-item.input-has-focus ion-input{
+    border-bottom: 1px solid #F7941E !important;
+}
+}

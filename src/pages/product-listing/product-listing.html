@@ -1,0 +1,30 @@
+<ion-header>
+  <page-header></page-header>
+</ion-header>
+<ion-content>
+  <div class="options">
+    <ion-list>
+      <ion-item (click)="sortBy()">
+        <ion-icon name="ios-funnel"></ion-icon>
+        Sort By
+      </ion-item>
+      <ion-item (click)="openModal()">
+        <ion-icon name="md-funnel"></ion-icon>
+        Filter By
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="product-list">
+    <ion-list>
+      <ion-item *ngFor="let prod of products">
+        <div class="img">
+          <img [src]="prod.images[0].src">
+        </div>
+        <div class="desc">
+          <h4 class="title">{{prod.name}}</h4>
+          <p class="price"><span class="money">Rs. {{prod.price}}</span> <span class="pack">/pack</span></p>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

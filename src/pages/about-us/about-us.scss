@@ -1,0 +1,63 @@
+page-about-us{
+  h2{
+    padding-top: 20px;
+  }
+  .logo{
+    height: 100px;
+    width: 110px;
+    position: absolute;
+    top: 200px;
+    right: 40px;
+    background: #fff;
+  }
+  .logo img{
+    height: 100%;
+    width: 100%;
+  }
+  div.content{
+    position: relative;
+    top: 50px;
+  }
+  small.author{
+    text-align: right;
+    float: right;
+  }
+  .imgcover--wrap{
+    position: relative;
+  }
+  .imgcover--wrap .imgcover--overlay{
+    position: absolute;
+    transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+  }
+  .imgcover--wrap .imgcover--overlay::before{
+    transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    background: #000;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+  }
+  .imgcover--wrap  .imgcover--content{
+    position: relative;
+    z-index: 999;
+    height: 100%;
+  }
+  .item--featured-product {
+    height: 100%;
+    color: #fff;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+}

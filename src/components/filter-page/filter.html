@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start left>
+      <button ion-button  class="close-btn" clear (click)="closeModal()">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Filter</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="clearFilter()">
+        Clear
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list class="price-filter">
+    <ion-list-header class="price-text">
+      <h4>Min Price<br>Rs. {{structure.lower}}</h4>
+      <h4>Max Price<br>Rs. {{structure.upper}}</h4>
+    </ion-list-header>
+    <ion-item>
+      <ion-range snaps="true" step="50" dualKnobs="true" pin="true" min="0" max="5000" [(ngModel)]="structure" color="dark"></ion-range>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="size-filter">
+    <ion-list-header>
+      <h4>Size</h4>
+    </ion-list-header>
+    <ion-item *ngFor="let s of size">
+      <ion-label>{{s.name}}</ion-label>
+      <ion-checkbox color="dark" [(ngModel)]="s.checked"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+
+  <footer>
+    <button item-end ion-button class="apply-btn" (click)="applyFilter()">Apply</button>
+  </footer>
+</ion-content>

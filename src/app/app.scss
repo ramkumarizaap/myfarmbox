@@ -1,0 +1,57 @@
+// http://ionicframework.com/docs/theming/
+@import"https://fonts.googleapis.com/css?family=Bitter:400,400italic,700";
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+*{
+    font-family: Bitter,serif;
+}
+ion-menu .toolbar-background-md{
+    background: #94c618 !important;
+	color:#fff;
+}
+ion-menu ion-title{
+    line-height: 45px;
+}
+ion-menu ion-title .toolbar-title.toolbar-title-md{
+    color: #fff;
+}
+ion-content ion-list button.item-md{
+    font-weight: bold;
+}
+p.logo{
+    background: transparent !important;
+    float: right;
+    height: 45px;
+    padding: 0;
+    width: 20% !important;
+    margin: 0 !important;
+}
+p.logo .item-inner{
+    border: none !important;
+}
+p.logo img{
+    height: 40px;
+    width: 120px;
+}
+ion-header .toolbar-background{
+    background: #94c618 !important;
+    color:#fff;
+}
+ion-header .toolbar-title-md{
+    color: #fff;
+}
+ion-header .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{
+    color: #fff;
+}

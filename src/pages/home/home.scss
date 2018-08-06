@@ -1,0 +1,174 @@
+page-home {
+  .scroll-content{
+		padding-left: 0px !important;
+		padding-right: 0px !important;		
+	}
+	.searchbar-md{
+		background: #94c618;
+		font-size: 12px;
+	}
+	.searchbar-md input{
+		font-size: 12px !important;
+		padding-left: 45px !important;
+	}
+	ion-slides,.slide-zoom{
+		height: 200px !important;
+	}
+	ion-slides img{
+		border-radius: 5px !important;
+	}
+	ion-list.menu-ul{
+		background: #fff;
+		margin: 0;
+	}
+	ion-list.menu-ul ion-item{
+		padding-left: 10px;
+		width: auto;
+		display: inline-block;
+		font-size: 12px;
+	}
+	ion-list.menu-ul ion-item .item-inner{
+		border: none !important;
+	}
+	ion-list.menu-ul ion-item ion-label{
+		margin: 8px 0px 6px 0 !important;
+	}
+	ion-list.menu-ul ion-item ion-label img{
+		vertical-align: middle;
+		margin-right: 4px;
+	}
+	div.best-for{
+		margin-top: 10px;
+		padding: 16px;
+		background: #fff !important;
+	}
+	div.best-for h4,div.products{
+		text-align: center;
+	}
+	div.best-for p{
+		font-size: 12px;
+		text-align: justify;
+	}
+	.card-background-page::before {
+		content: "";
+		background: #000;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=45)";
+		-moz-opacity: .6;
+		-khtml-opacity: .6;
+		opacity: .6;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.card-background-page
+	{
+		position: relative;
+		background-image: url('https://myfarmbox.in/wp-content/uploads/2016/03/fruit-bg-1-4.jpg?id=2052') !important;
+		background-position: top center;
+		background-repeat: repeat;
+		text-align: center;
+		color: #fff !important;
+	
+		.container{
+			position: relative;
+			z-index: 10;
+			padding: 20px 0px 20px 0;
+		}
+		h3.wrapper-title{
+			padding-bottom: 20px;
+		}
+		ion-list ion-item{
+			width: 90% !important;
+			margin: 0 auto !important;
+			text-align: center;
+			margin-bottom: 20px !important;
+		}
+		ion-list ion-item h3.list-title{
+			font-style: italic;
+			font-size: 16px !important;
+			padding-bottom: 10px;
+		}
+		ion-list ion-item h4.price{
+			font-size: 12px !important;
+			padding-bottom: 20px;
+			border-bottom: 1px solid #ccc;
+		}
+		ion-list ion-item h4.price span.pack{
+			color: #666 !important;
+		}
+		div.img{
+			margin-top: 10px;
+		}
+		p.desc{
+			height: 50px;
+			max-height: 50px;
+			overflow: hidden;
+			font-size: 12px !important;
+			padding-top: 10px;
+			white-space: initial !important;
+		}
+		p.desc p{
+			font-size: 12px !important;
+		}
+		.btn.pack-btn{
+			margin: 10px;
+			padding: 20px;
+			background: transparent;
+			border: 1px solid black;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		.btn.pack-btn:hover{
+			color: #fff;
+			background: #94c618;
+			border: 1px solid #94c618;
+		}
+	}
+	.how-deliver{
+		margin-top: 20px;
+		margin-right: 20px;
+		margin-left: 20px;
+		padding: 20px 10px 20px 10px;
+		border: 1px solid #e3e3e3;
+		text-align: center;
+		img{
+			margin: 0 auto;
+		}
+		p.title{
+			font-size: 13px !important;
+		}
+		p.small{
+			font-size: 10px !important;
+			color: #666;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+	}
+	
+
+	ion-list.search-list{
+  	width: 95.8%;
+		position: absolute;
+		top: 112px;
+		border: 1px solid #ccc;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+		z-index: 99;
+		left: 8px;
+		max-height: 200px;
+		overflow: auto;
+		box-shadow: 1px 3px 5px 1px #000;
+		img{
+			height: 20px;
+			margin-right: 10px;
+			vertical-align: middle;
+			width: 30px;
+		}
+		ion-item{
+			font-size: 12px !important;
+		}
+	}
+	
+}

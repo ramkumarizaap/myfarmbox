@@ -1,0 +1,55 @@
+<ion-content>
+	<div class="bg"></div>
+	<div class="container">
+		<div class="logo">
+			<img src="assets/icon/logo.png">
+		</div>
+		<div class="main-content">
+			<!-- <form [formGroup]="loginForm">
+				<ion-item>
+					<ion-label floating>Username</ion-label>
+					<ion-input formControlName="username" name="username" type="text"></ion-input>
+				</ion-item>		
+				<ion-item class="error" no-lines no-padding>
+					<p ion-text text-wrap>Please Enter Email-ID</p>
+				</ion-item>	
+				<ion-item>
+					<ion-label floating>Password</ion-label>
+					<ion-input type="password"></ion-input>
+				</ion-item>
+				<button class="btn btn-orange" (click)="doLogin()" ion-button block>Login&nbsp;<ion-icon name="ios-log-in"></ion-icon></button>
+				<button class="btn btn-fb" ion-button block><ion-icon name="logo-facebook"></ion-icon>&nbsp;&nbsp;Signup with Facebook</button>
+				<button class="btn btn-google" ion-button block><ion-icon name="logo-googleplus"></ion-icon>&nbsp;&nbsp;Signup with Google</button>
+			</form> -->
+			<form novalidate="" [formGroup]="_loginForm" method="post">
+				<ion-item>
+					<ion-label floating>
+						<ion-icon name="mail" item-start class="text-primary"></ion-icon>
+						Email
+					</ion-label>
+					<ion-input  formControlName="email" type="email"></ion-input>
+				</ion-item>
+				<ion-item class="error" no-lines no-padding *ngIf="_loginForm.controls.email.errors?.required && (loginFormSubmitted || _loginForm.controls.email.dirty || _loginForm.controls.email.touched)">
+					<p ion-text text-wrap>Please Enter Email-ID</p>
+				</ion-item>
+				<ion-item class="error" no-lines no-padding *ngIf="_loginForm.controls.email.errors?.email  && _loginForm.controls.email.value!='' && ( loginFormSubmitted || _loginForm.controls.email.dirty)">
+					<p ion-text text-wrap>Please use correct email format, e.g.:someone@domain.com.</p>
+				</ion-item>
+				<ion-item>
+					<ion-label floating>
+						<ion-icon name="key" item-start class="text-primary"></ion-icon>
+						Password
+					</ion-label>
+					<ion-input  formControlName="password" [type]="_passwordInputType"></ion-input>
+				</ion-item>
+					<ion-icon float-right name="{{_passwordIcon}}" (click)="_toggleViewPassword($event)" class="password-icon"></ion-icon>
+				<ion-item class="error" no-lines no-padding *ngIf="_loginForm.controls.password.errors?.required && (_loginForm.controls.password.touched || loginFormSubmitted || _loginForm.controls.password.dirty)">
+					<p ion-text text-wrap>Please Enter Password</p>
+				</ion-item>
+				<button class="btn btn-orange" (click)="doLogin()" ion-button block>Login&nbsp;<ion-icon name="ios-log-in"></ion-icon></button>
+				<button class="btn btn-fb" ion-button block><ion-icon name="logo-facebook"></ion-icon>&nbsp;&nbsp;Signup with Facebook</button>
+				<button class="btn btn-google" ion-button block><ion-icon name="logo-googleplus"></ion-icon>&nbsp;&nbsp;Signup with Google</button>
+			</form>
+		</div>
+	</div>
+</ion-content>
