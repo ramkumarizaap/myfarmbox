@@ -20,7 +20,6 @@ import { SharedModule }  from '../components/shared-module';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { ExpandableHeader } from '../components/scroll/scroll-directive';
 import { AppSettingsService } from '../services/app-settings.service';
 import { ProductService } from '../services/product.service';
 import { CartService } from '../services/cart.service';

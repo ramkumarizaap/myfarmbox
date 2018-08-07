@@ -1,0 +1,21 @@
+page-product-title{
+  div.product-description{
+    padding: 10px;
+    h4{
+      margin: 0 !important;
+      padding-bottom: 10px;
+      font-weight: normal;
+      font-size: 14px;
+    }
+    div.price{
+      span.money{
+        font-weight: bold;
+        font-size: 18px;
+      }
+      span.pack{
+        font-size: 12px;
+        color: #666;
+      }
+    }
+  }
+}

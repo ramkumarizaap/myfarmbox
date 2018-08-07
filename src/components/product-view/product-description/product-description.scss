@@ -1,0 +1,21 @@
+page-product-description{
+  div.short-description{
+    font-size: 13px;
+    padding: 10px;
+    strong{
+      font-weight: normal !important;
+    }
+    ul{
+      padding: 5px 0px 0px 10px;
+    }
+    ul li{
+      background: url('../../assets/icon/leaf.png') no-repeat 0px 4px transparent;
+      list-style-type: none;
+      margin: 0;
+      padding: 0px 0px 5px 25px;
+      line-height: 20px;
+      vertical-align: middle;
+    }
+    
+  }
+}

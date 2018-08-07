@@ -9,7 +9,7 @@ Class Users extends AppController {
 	function __construct()
     {
         parent::__construct();
-        // $this->load->model('users_model');
+        $this->load->model('users_model');
         
     }
 
@@ -578,6 +578,28 @@ Class Users extends AppController {
                $output['msg'] = $e->getMessage();
            }
            $this->response($output);
+        }
+
+        public function checkPincode_post(){
+            try
+            {
+                $output['status'] = 'success';
+                $form = $this->post('params');
+                $where['pincode'] = $form['pincode'];
+                $chk = $this->users_model->get_where($where,"*","wp_check_pincode_p")->row_array();
+                if( $chk ){
+                    $output['message'] = "Pincode is available to deliver!";
+                }
+                else
+                    throw new Exception("This pincode is not available.");
+            }
+            catch(Exception $e)
+            {
+                $output['status'] = "error";
+                $output['message'] = $e->getMessage();
+            }
+            $output['res'] = $this->post();
+            $this->response($output);
         }
     
 }

@@ -1,0 +1,21 @@
+page-product-input{
+  div.input{
+    clear: both;
+    display: table;
+    padding: 10px;
+    ion-item{
+      border: 1px solid #ccc;
+      width: 45%;
+      float: left;
+    }
+    ion-label{
+      text-transform: capitalize;
+    }
+    ion-item ion-input input{
+      padding-left: 10px;
+    }
+    ion-item:first-child{
+      margin-right: 20px;
+    }
+  }
+}

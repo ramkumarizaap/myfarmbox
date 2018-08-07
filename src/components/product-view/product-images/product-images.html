@@ -1,0 +1,8 @@
+<div class="product-images">
+  <div class="banner">
+    <img src="{{imgURL}}">
+  </div>
+  <div class="thumbnail">
+    <img *ngFor="let img of product.images" (click)="changeImg(img.src)" src="{{img.src}}">
+  </div>
+</div>

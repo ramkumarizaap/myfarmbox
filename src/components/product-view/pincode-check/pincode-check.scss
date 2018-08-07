@@ -1,0 +1,39 @@
+page-pincode-check{
+  .item-inner{
+    border: none !important;
+  }
+  
+  display: table;
+  width: 100%;
+  ion-item.input{
+    width:60%;
+    float: left;
+    font-size: 12px;
+    
+    input{
+      margin: 0 !important;
+      padding: 5px 0px 5px 5px;
+      height: 40px;
+      border-bottom: 1px solid #94c618;
+    }
+  }
+  ion-item.action-btn{
+    width: 40%;
+    float: right;
+    .check-btn{
+      background: #f5a42b;
+    }
+  }
+  ion-item.status{
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 !important;
+    
+    .success{
+      color: #94c618;
+    }
+    .error{
+      color: #f5a42b;
+    }
+  }
+}

@@ -11,7 +11,7 @@ export class ProductViewPage {
   baseURL: string;
   pincodeStatus: string = "";
   productID: number;
-  pincode: number;
+  pincode: number = 0;
   quantity: number = 1;
   product: any;
   constructor(public appSettings: AppSettingsService,public params: NavParams,
@@ -45,37 +45,13 @@ export class ProductViewPage {
         this.quantity -= 1;
     }
  }
-  checkPincode(){
-    if(this.pincode !== '')
-    {
-      this.userService.checkPincode(this.pincode).subscribe((res)=>{
-        if(res['status'] === 'success')
-          this.pincodeStatus = "This pincode is available to deliver.";
-        else{
-          let err = alertCtrl.create({
-            title:'Error',
-            message: res['msg'],
-            buttons:['OK']
-          });
-          err.present();
-        }
-      });
-    }
-    else{
-      let alert = alertCtrl.create({
-        title:'Error',
-        message:'Please Enter your area pincode',
-        buttons:['OK']
-      });
-      alert.present();
-    }
-  }
+  
   
   addToCart(){
-    if(this.pincode !== ''){
+    if(this.pincode !== 0){
     }
     else{
-       let alert = alertCtrl.create({
+       let alert = this.alertCtrl.create({
          title:'Error',
          message:'Please check your pincode area availability!',
          buttons:['OK']

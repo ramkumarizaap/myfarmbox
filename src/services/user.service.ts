@@ -53,6 +53,16 @@ export class UserService {
             http.
             post(this.baseURL+'api/users/saveContact',httpOptions);
   }
+
+  public checkPincode(pincode: number){
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json'}),
+      params: pincode
+    };
+    return this.
+            http.
+            post(this.baseURL+'api/users/checkPincode',httpOptions);
+  } 
 }
 export interface userInterface{
   userId:number;
