@@ -30,7 +30,23 @@
             <ion-option *ngFor="let op of attr.options">{{op}}</ion-option>
         </ion-select>
       </ion-item>
+      <ion-item>
+        <button ion-button item-left clear (click)="qtyUpdate('minus')">
+          <ion-icon name="ios-remove"></ion-icon>
+        </button>
+        <ion-input type="text" [ngModel]="quantity" placeholder="qunatity">
+        <button ion-button item-right clear (click)="qtyUpdate('add')">
+          <ion-icon name="ios-add"></ion-icon>
+        </button>
+      </ion-item>
     </ion-list>
+  </div>
+  <div class="pincode">
+    <ion-item>
+      <ion-label>Check your area availability</ion-label>
+      <ion-input type="number" placeholder="Pincode" maxlength="6" ([ngModel])="pincode">
+        <button class="pincode-btn" ion-button (click)="checkPincode()">Check</button>
+    </ion-item>
   </div>
   <div class="short-description">
     <span [innerHTML]="product.short_description"></span>
