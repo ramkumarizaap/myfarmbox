@@ -15,10 +15,7 @@ import { ContactUs } from '../pages/contact-us/contact-us';
 import { ProductListingPage } from '../pages/product-listing/product-listing';
 import { ProductViewPage } from '../pages/product-view/product-view';
 
-import { FooterPage } from '../components/partials/footer/footer';
-import { HeaderPage } from '../components/partials/header/header';
-import { ErrorPage } from '../components/error/error';
-import { FilterPage } from '../components/filter-page/filter';
+import { SharedModule }  from '../components/shared-module';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -40,18 +37,14 @@ import { PipesModule } from 'w-ng5';
     AboutUs,
     WhatWeDeliver,
     ContactUs,
-    ExpandableHeader,
-    HeaderPage,
-    FooterPage,
     ProductListingPage,
-    ErrorPage,
-    FilterPage,
     ProductViewPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
     PipesModule,
+    SharedModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
   ],
@@ -65,11 +58,7 @@ import { PipesModule } from 'w-ng5';
     HowItWorks,
     WhatWeDeliver,
     ContactUs,
-    HeaderPage,
-    FooterPage,
     ProductListingPage,
-    ErrorPage,
-    FilterPage,
     ProductViewPage
   ],
   providers: [
