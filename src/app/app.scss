@@ -55,3 +55,22 @@ ion-header .toolbar-title-md{
 ion-header .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{
     color: #fff;
 }
+.rupee-icon{
+    background-image: url('../assets/icon/rupee.png');
+    width: 20px;
+    display: inline-block;
+    height: 20px;
+    background-repeat: no-repeat;
+}
+.rupee-icon.sm{
+    background-size: 12px 12px;
+    background-position: 5px 8px;
+}
+.rupee-icon.lg{
+    background-size: 15px 15px;
+    background-position: 5px 5px;
+}
+.rupee-icon.md{
+    background-size: 12px 12px;
+    background-position: 5px 8px;
+}

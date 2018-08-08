@@ -8,7 +8,8 @@
   <page-pincode-check (getPincode)="setPincode($event)" ></page-pincode-check> 
   <page-product-description [product]="product"></page-product-description>
   <footer>
-    <button ion-button (click)="addToCart()" class="cart-btn">Add to Cart</button>
+    <button ion-button *ngIf="!showCartBtn" (click)="addToCart()" class="cart-btn">Add to Cart</button>
+    <button ion-button *ngIf="showCartBtn" (click)="goToCart()" class="cart-btn">Go to Cart</button>
     <button ion-button class="buy-btn">Buy Now</button>
   </footer>
 </ion-content>

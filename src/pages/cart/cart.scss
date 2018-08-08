@@ -6,6 +6,10 @@ page-cart{
     box-shadow: 1px 5px 5px -4px #000 !important;
     margin-bottom: 20px !important;
   }
+  ion-list{
+    overflow: auto;
+    max-height: 550px;
+  }
   .product{
     .product-desc{
       width: 75%;

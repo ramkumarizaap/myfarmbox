@@ -584,8 +584,8 @@ Class Users extends AppController {
             try
             {
                 $output['status'] = 'success';
-                $form = $this->post('params');
-                $where['pincode'] = $form['pincode'];
+                $pincode = $this->post('params');
+                $where['pincode'] = $pincode;
                 $chk = $this->users_model->get_where($where,"*","wp_check_pincode_p")->row_array();
                 if( $chk ){
                     $output['message'] = "Pincode is available to deliver!";

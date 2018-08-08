@@ -43,15 +43,15 @@ export class CartService {
     console.log('Fron Cart',this.cart);
   }
 
-  public update(product: ProductInterface, variantSKU: string, qty: number) {
+  public update(product: ProductInterface,qty:number) {
     if (this.cart[product.id]) {
-      if (this.cart[product.id].variants && this.cart[product.id].variants[variantSKU]) { // Update
-        this.cart[product.id].variants[variantSKU].orderedQuantity = qty;
+      if (this.cart[product.id].orderedQuantity) { // Update
+        this.cart[product.id].orderedQuantity = qty;
       }
     } else { // Add
       this.cart[product.id] = product;
-      if (this.cart[product.id].variants && this.cart[product.id].variants[variantSKU]) {
-        this.cart[product.id].variants[variantSKU].orderedQuantity = qty;
+      if (this.cart[product.id].orderedQuantity) {
+        this.cart[product.id].orderedQuantity = qty;
       }
     }
 

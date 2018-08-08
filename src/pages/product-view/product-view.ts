@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
-import { NavParams, ViewController, AlertController } from 'ionic-angular';
+import { NavParams, ViewController, AlertController, NavController } from 'ionic-angular';
 import { AppSettingsService } from '../../services/app-settings.service';
-import { ProductService,ProductInterface } from '../../services/product.service';
+import { ProductService } from '../../services/product.service';
 import { UserService } from '../../services/user.service';
-import { CartInterface,CartService } from '../../services/cart.service';
+import { CartService } from '../../services/cart.service';
+import { CartPage } from '../cart/cart';
 @Component({
   selector: 'page-product-view',
   templateUrl: 'product-view.html'
 })
 export class ProductViewPage {
   baseURL: string;
+  showCartBtn: boolean = false;
   pincodeStatus: string = "";
   productID: number;
   public pincode: number = null;
@@ -18,7 +20,7 @@ export class ProductViewPage {
   constructor(public appSettings: AppSettingsService,public params: NavParams,
   public viewCtrl: ViewController,public productService: ProductService,
   public userService: UserService,public alertCtrl: AlertController,
-public cart: CartService){
+public cart: CartService,public nav: NavController){
     this.baseURL = this.appSettings.getBaseUrl();
     if(this.params.data.id){
       this.productID = this.params.data.id;
@@ -60,6 +62,7 @@ public cart: CartService){
     if(this.pincode !== null){
       let key = this.product.id;
       this.cart.insert(this.product,key,this.quantity);
+      this.showCartBtn = true;
       this.cart.cart$.subscribe((res)=>{
         console.log('Cart',res);
       });
@@ -72,5 +75,8 @@ public cart: CartService){
        });
       alert.present();
     }
+  }
+  goToCart(){
+    this.nav.push(CartPage);
   }
 }

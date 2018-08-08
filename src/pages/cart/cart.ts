@@ -15,6 +15,7 @@ export class CartPage {
     cartTotalQty:null,
     totalItems:null
   };
+  newQty: number;
   constructor(public cart: CartService,public nav: NavController){
     this.cart.cart$.subscribe((res)=>{
       console.log('Cart',res);
@@ -33,5 +34,10 @@ export class CartPage {
   removeItem(product: any){
     console.log('Remove',product);
     this.cart.remove(product);
+  }
+  changeQty(product: any,qty){
+    let newQty: number = qty.target.value;
+    console.log('New Qty',qty);
+    this.cart.update(product,newQty);
   }
 }

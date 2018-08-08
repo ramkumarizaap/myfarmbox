@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { NavController, NavParams,ActionSheetController,ModalController } from 'ionic-angular';
+import { NavController, NavParams,ActionSheetController,ModalController,LoadingController } from 'ionic-angular';
 import { ProductViewPage } from '../product-view/product-view';
 // import { InAppBrowser } from '@ionic-native/in-app-browser';
 // import { Slides } from 'ionic-angular';
@@ -20,25 +20,36 @@ export class ProductListingPage implements OnInit {
   baseURL: string;
   constructor(public params: NavParams,public appSettings: AppSettingsService,
       public productService: ProductService,public actionSheet: ActionSheetController,
-    public modalCtrl: ModalController,public navCtrl: NavController){
+    public modalCtrl: ModalController,public navCtrl: NavController,
+  public loader: LoadingController){
     console.log('Params',this.params);
     this.baseURL = this.appSettings.getBaseUrl();
   }
 
   ngOnInit(){
-    
+
       this.loadProducts();
   }
 
   loadProducts(){
+    let load = this.loader.create({
+      content:'Please Wait...'
+    });
+    load.present();
     this.products = [];
     this.productService.mappedProducts$.subscribe((res)=>{
-      let resp: any = res;
-      resp.forEach(element => {
-        if(element.name === this.params.data.name)
-          this.products = element.products;
-      });
-      console.log(this.params.data.name, this.products);
+      if(res)
+      {
+        setTimeout(()=>{
+            let resp: any = res;
+            resp.forEach(element => {
+              if(element.name === this.params.data.name)
+                this.products = element.products;
+            });
+            load.dismiss();
+        },2000);
+        console.log(this.params.data.name, this.products);
+      }
     });
   }
 
