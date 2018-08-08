@@ -4,8 +4,8 @@
 <ion-content>
   <page-product-images [product]="product"></page-product-images>
   <page-product-title  [product]="product"></page-product-title>
-  <page-product-input  [product]="product"></page-product-input>
-  <page-pincode-check></page-pincode-check> 
+  <page-product-input  [product]="product" (getQty)="setQty($event)"></page-product-input>
+  <page-pincode-check (getPincode)="setPincode($event)" ></page-pincode-check> 
   <page-product-description [product]="product"></page-product-description>
   <footer>
     <button ion-button (click)="addToCart()" class="cart-btn">Add to Cart</button>

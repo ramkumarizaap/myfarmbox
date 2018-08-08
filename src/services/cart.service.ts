@@ -22,18 +22,18 @@ export class CartService {
 
   public insert(product: ProductInterface, variantSKU: string, qty: number) {
     if (this.cart[product.id]) {
-      if (this.cart[product.id].variants && this.cart[product.id].variants[variantSKU]) { // Update
-        this.cart[product.id].variants[variantSKU].orderedQuantity += qty;
+      if (this.cart[product.id].orderedQuantity) { // Update
+        this.cart[product.id].orderedQuantity += qty;
       } else { // Add
-        if (this.cart[product.id].variants) {
-          this.cart[product.id].variants[variantSKU].orderedQuantity = qty;
+        if (this.cart[product.id].orderedQuantity) {
+          this.cart[product.id].orderedQuantity = qty;
         }
       }
     } else { // Add
       this.cart[product.id] = product;
-      if (this.cart[product.id].variants && this.cart[product.id].variants[variantSKU]) {
-        this.cart[product.id].variants[variantSKU].orderedQuantity = qty;
-      }
+      // if (this.cart[product.id].variants && this.cart[product.id].variants[product.id]) {
+        this.cart[product.id].orderedQuantity = qty;
+      // }
     }
 
     // trigger cartSource
@@ -113,8 +113,30 @@ export class CartService {
     this.totalItems = 0;
     this.cartItems = [];
     this.cartTotalQty = 0;
+    /* */
 
-    for (const productId in this.cart) {
+    for(const productId in this.cart){
+      if(this.cart.hasOwnProperty(productId)){
+        const product = this.cart[productId];
+        let item: VariantInterface = {
+          id: product.id,
+          name: product.name,
+          orderedQuantity: product.orderedQuantity,
+          available: null,
+          price: product.price,
+          quantity: null,
+          sku: product.id
+        };
+        if(product.orderedQuantity){
+          this.cartTotal += (product.orderedQuantity * product.price);
+          this.cartItems.push(item);
+          this.totalItems++;
+          this.cartTotalQty = Number(this.cartTotalQty) + Number(product.orderedQuantity);
+        }
+      }
+    }
+
+    /*for (const productId in this.cart) {
       if (this.cart.hasOwnProperty(productId)) {
         const product = this.cart[productId];
         for (const variantSKU in product.variants) {
@@ -129,7 +151,7 @@ export class CartService {
           }
         }
       }
-    }
+    }*/
   }
   public resetCartData(): Promise<boolean>
   {    
@@ -185,6 +207,7 @@ export interface ProductInterface {
   colors: Array<string>;
   size: Array<string>;
   video:string;
+  orderedQuantity: number;
 }
 
 export interface ProductImageInterface

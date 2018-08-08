@@ -1,0 +1,118 @@
+page-cart{
+  ion-content{
+  background: #efefef !important;
+  }
+  ion-list ion-item{
+    box-shadow: 1px 5px 5px -4px #000 !important;
+    margin-bottom: 20px !important;
+  }
+  .product{
+    .product-desc{
+      width: 75%;
+      float: left;
+      ion-title .toolbar-title-md{
+        font-size: 14px !important;
+        font-weight: bold;
+        padding: 0;
+      }
+      ion-title{
+        padding-bottom: 10px;
+      }
+      p.price{
+        font-weight: bold;
+        color: #000000;
+        font-size: 18px;
+        padding-bottom: 7px;
+      }
+      p.delivery{
+        font-size: 10px;
+      }
+    }
+    .product-img{
+      width: 25%;
+      float: right;
+      select{
+        margin-top: 10px;
+        border: 1px solid #eee;
+        box-shadow: 0px 0px 5px -3px #000;
+        padding: 3px 5px 3px 5px;
+        background: #fff;
+        width: 100%;
+        display: block;
+        font-size: 10px;
+      }
+    }
+    div.options{
+      width: 100%;
+      float: left;
+      margin-top: 20px;
+      padding: 10px 0px 0px 0px;
+      text-align: center;
+      border-top: 1px solid #ccc;
+      button{
+        color: #000;
+        text-transform: capitalize;
+        font-family: Bitter,serif !important;
+      }
+    }
+  }
+  .price{
+    padding: 0 !important;
+    ion-label{
+      margin: 0 !important;
+    }
+    .item-inner,ion-label{
+      padding: 0 !important;
+    }
+    ion-title{
+      padding: 10px 0px 10px 0px;
+      border-bottom: 1px solid #ccc;
+      .toolbar-title-md{
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+    }
+
+    ion-grid{
+      font-size: 12px;
+      ion-col:last-child{
+        font-weight: bold;
+      }
+    }
+  }
+  footer{
+    box-shadow: 0px 0px 5px -3px #000;
+    border: 1px solid #ddd;
+    width: 100%;
+    position: fixed;
+    background: #fff;
+    bottom: 0;
+    p{
+      width: 40%;
+      float: left;
+      font-size: 16px;
+      font-weight: bold;
+      padding-left: 10px;
+    }
+    button{
+      width: 50%;
+      float: right;
+      margin-top: 10px !important;
+      margin-right: 10px !important;
+      background: #f5a42b !important;
+      text-transform: capitalize !important;
+      font-weight: bold !important;
+      color: #fff;
+    }
+  }
+  .cart-empty{
+    text-align: center;
+    img{
+      margin-top: 30%;
+      width: 40%;
+    }
+    .shop-btn button{
+      background: #f5a42b !important;
+    }
+  }
+}

@@ -4,8 +4,9 @@
 	</button>
 	<ion-title>myFarmBox</ion-title>
 	<ion-buttons end>
-		<button ion-button tappable>
+		<button ion-button tappable (click)="openCart()">
 			<ion-icon name="ios-cart"></ion-icon>
+			<ion-badge *ngIf="cartCount > 0" item-end>{{cartCount}}</ion-badge>
 		</button>
 	</ion-buttons>
 </ion-navbar>

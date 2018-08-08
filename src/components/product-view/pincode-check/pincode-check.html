@@ -1,9 +1,9 @@
 <ion-item class="input">
-  <ion-input placeholder="Enter your pincode check availability" [ngModel]="pincode"></ion-input>
+  <ion-input type="number" placeholder="Enter your pincode check availability" [(ngModel)]="pincode"></ion-input>
 </ion-item>
 <ion-item class="action-btn">
   <button ion-button block class="check-btn" (click)="checkPincode()">Check</button>
 </ion-item>
-<ion-item class="status">
+<ion-item class="status" *ngIf="showMsg">
   <span class="{{availclass}}">{{pincodeStatus}}</span>
 </ion-item>

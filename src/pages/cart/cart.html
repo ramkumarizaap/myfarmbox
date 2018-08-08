@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>My Cart <span *ngIf="CartCount > 0">({{CartCount}})</span></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngIf="items.totalItems > 0">
+    <ion-item class="product" *ngFor="let i of items.cartItems">
+      <div class="product-desc">
+        <ion-title>
+          {{i.name}}
+        </ion-title>
+        <p class="price">Rs. {{i.price}}</p>
+        <p class="delivery">Delivery in 7-8 days | Rs.50</p>
+      </div>
+      <div class="product-img">
+        <img src="../../assets/imgs/bg.jpg">
+          <select>
+            <option value="">Qty: {{i.orderedQuantity}}</option>
+            <option value="1">1</option><option value="2">2</option>
+            <option value="3">3</option><option value="4">4</option>
+            <option value="5">5</option><option value="6">6</option>
+            <option value="7">7</option><option value="8">8</option>
+            <option value="9">9</option><option value="10">10</option>
+          </select>
+      </div>
+      <div class="options">
+        <button block clear ion-button>
+          <ion-icon name="ios-trash"></ion-icon>&nbsp;
+          Remove
+        </button>
+      </div>
+    </ion-item>
+    <ion-item class="price">
+      <ion-title>Price Details</ion-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-9>Price ({{items.totalItems}})</ion-col>
+          <ion-col text-right col-3>Rs.{{items.cartTotal}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-9>Delivery</ion-col>
+          <ion-col text-right col-3>Rs.0</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+  <div class="cart-empty" *ngIf="items.totalItems <= 0">
+    <div class="img">
+      <img src="../../assets/imgs/empty_cart.png">
+    </div>
+    <div class="shop-btn" (click)="continueShop()">
+      <button ion-button>Continue Shopping</button>
+    </div>
+  </div>
+  <footer  *ngIf="items.totalItems > 0">
+    <p pull-left item-left>Rs.{{items.cartTotal}}</p>
+    <button ion-button pull-right item-right>Continue</button>
+  </footer>
+</ion-content>

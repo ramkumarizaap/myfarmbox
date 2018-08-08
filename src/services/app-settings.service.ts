@@ -8,9 +8,9 @@ export class AppSettingsService {
     this.apiUrl = 'http://localhost/myfarmbox/api';
     this.baseUrl = 'http://localhost/myfarmbox/';
     if (location.href.indexOf('myfarmbox') !== -1) {
-      this.apiUrl = 'https://myfarmbox/api';
-      this.baseUrl = 'https://myfarmbox/';
-    }
+      this.apiUrl = 'https://myfarmbox.in/api';
+      this.baseUrl = 'https://myfarmbox.in/';
+   }
   }
 
   /**

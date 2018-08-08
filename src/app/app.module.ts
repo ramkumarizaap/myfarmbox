@@ -14,6 +14,7 @@ import { WhatWeDeliver } from '../pages/what-we-deliver/what-we-deliver';
 import { ContactUs } from '../pages/contact-us/contact-us';
 import { ProductListingPage } from '../pages/product-listing/product-listing';
 import { ProductViewPage } from '../pages/product-view/product-view';
+import { CartPage } from '../pages/cart/cart';
 
 import { SharedModule }  from '../components/shared-module';
 
@@ -37,7 +38,8 @@ import { PipesModule } from 'w-ng5';
     WhatWeDeliver,
     ContactUs,
     ProductListingPage,
-    ProductViewPage
+    ProductViewPage,
+    CartPage
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ import { PipesModule } from 'w-ng5';
     WhatWeDeliver,
     ContactUs,
     ProductListingPage,
-    ProductViewPage
+    ProductViewPage,
+    CartPage
   ],
   providers: [
     StatusBar,

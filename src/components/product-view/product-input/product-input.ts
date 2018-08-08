@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output,EventEmitter } from '@angular/core';
 @Component({
   selector: 'page-product-input',
   templateUrl: 'product-input.html'
@@ -6,6 +6,7 @@ import { Component, Input } from '@angular/core';
 export class ProductInput {
  quantity: number = 1;
  @Input() public product: any;
+ @Output() getQty = new EventEmitter<number>();
  constructor(){
 
  }
@@ -19,6 +20,7 @@ export class ProductInput {
     if(this.quantity >= 2)
       this.quantity -= 1;
   }
+  this.getQty.emit(this.quantity);
 }
   
 }
