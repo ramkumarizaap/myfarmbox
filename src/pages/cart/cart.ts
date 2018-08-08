@@ -29,4 +29,9 @@ export class CartPage {
   continueShop(){
     this.nav.setRoot(HomePage);
   }
+
+  removeItem(product: any){
+    console.log('Remove',product);
+    this.cart.remove(product);
+  }
 }

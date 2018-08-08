@@ -1,4 +1,4 @@
-import { Component,ViewChild,OnInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { NavController, NavParams,ActionSheetController,ModalController } from 'ionic-angular';
 import { ProductViewPage } from '../product-view/product-view';
 // import { InAppBrowser } from '@ionic-native/in-app-browser';

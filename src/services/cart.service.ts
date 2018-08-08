@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams, HttpResponse, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
-import { Observable, BehaviorSubject } from 'rxjs';
-import { map,mergeMap,catchError } from "rxjs/operators";
+import {  BehaviorSubject } from 'rxjs';
+// import { map,mergeMap,catchError } from "rxjs/operators";
 
 @Injectable()
 export class CartService {
@@ -60,23 +59,19 @@ export class CartService {
     this.updateCartSouce();
   }
 
-  public remove(product: ProductInterface, variantSKU: string) {
+  public remove(product: ProductInterface) {
     if (!this.cart[product.id]) {
       return;
     }
 
-    if (this.cart[product.id].variants && this.cart[product.id].variants[variantSKU]) {
-      this.cart[product.id].variants[variantSKU].orderedQuantity = 0;
+    if (this.cart[product.id]) {
+      this.cart[product.id].orderedQuantity = 0;
     }
 
-    if (this.cart[product.id].variants) {
+    if (this.cart[product.id]) {
       let found = false;
-      for (const vsku in this.cart[product.id].variants) {
-        if (this.cart[product.id].variants.hasOwnProperty(vsku)) {
-          if (this.cart[product.id].variants[vsku].orderedQuantity) {
+          if (this.cart[product.id].orderedQuantity) {
             found = true;
-          }
-        }
       }
 
       if (!found) {

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams, HttpResponse, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 
-import { Observable } from 'rxjs/observable';
-import { map,mergeMap,catchError } from "rxjs/operators";
+// import { Observable } from 'rxjs/observable';
+import { map } from "rxjs/operators";
 import { BehaviorSubject } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';

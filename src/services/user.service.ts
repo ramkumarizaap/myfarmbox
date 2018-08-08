@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams, HttpResponse, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpParams,  HttpHeaders } from '@angular/common/http';
 
 import { Observable, BehaviorSubject } from 'rxjs';
-import { map,mergeMap,catchError } from "rxjs/operators";
+import { map } from "rxjs/operators";
 import { AppSettingsService } from './app-settings.service';
 
 @Injectable()
