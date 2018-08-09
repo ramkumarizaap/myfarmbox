@@ -11,13 +11,14 @@ import { AboutUs } from '../pages/about-us/about-us';
 import { WhatWeDeliver } from '../pages/what-we-deliver/what-we-deliver';
 import { ContactUs } from '../pages/contact-us/contact-us';
 import { ProductService } from '../services/product.service'; 
+import { AddAddressPage } from '../components/cart/add-address/add-address';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp implements OnInit {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = AddAddressPage;
 
   pages: Array<{title: string, component: any,icon:string}>;
 

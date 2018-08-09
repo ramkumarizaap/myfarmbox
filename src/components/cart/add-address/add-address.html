@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add Address</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="addressForm">
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="ios-contact" item-start class="text-primary"></ion-icon>
+        Name
+      </ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item class="error" no-lines no-padding *ngIf="addressForm.controls.name.errors?.required && (addressFormSubmitted || addressForm.controls.name.dirty || addressForm.controls.name.touched)">
+      <p ion-text text-wrap>Please Enter Your Name</p>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="ios-pin" item-start class="text-primary"></ion-icon>
+        Door No &amp; Street Name
+      </ion-label>
+      <ion-input type="text" formControlName="street_name"></ion-input>
+    </ion-item>
+    <ion-item class="error" no-lines no-padding *ngIf="addressForm.controls.street_name.errors?.required && (addressFormSubmitted || addressForm.controls.street_name.dirty || addressForm.controls.street_name.touched)">
+      <p ion-text text-wrap>Please Enter Door No. & Street Name</p>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="ios-pin" item-start class="text-primary"></ion-icon>
+        Area/Locality
+      </ion-label>
+      <ion-input type="text" formControlName="area"></ion-input>
+    </ion-item>
+    <ion-item class="error" no-lines no-padding *ngIf="addressForm.controls.area.errors?.required && (addressFormSubmitted || addressForm.controls.area.dirty || addressForm.controls.area.touched)">
+      <p ion-text text-wrap>Please Enter Area/Locality</p>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="ios-pin" item-start class="text-primary"></ion-icon>
+        City
+      </ion-label>
+      <ion-input type="text" formControlName="city"></ion-input>
+    </ion-item>
+    <ion-item class="error" no-lines no-padding *ngIf="addressForm.controls.city.errors?.required && (addressFormSubmitted || addressForm.controls.city.dirty || addressForm.controls.city.touched)">
+      <p ion-text text-wrap>Please Enter City</p>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="ios-pin" item-start class="text-primary"></ion-icon>
+        State
+      </ion-label>
+      <ion-input type="text" formControlName="state"></ion-input>
+    </ion-item>
+    <ion-item class="error" no-lines no-padding *ngIf="addressForm.controls.state.errors?.required && (addressFormSubmitted || addressForm.controls.state.dirty || addressForm.controls.state.touched)">
+      <p ion-text text-wrap>Please Enter State</p>
+    </ion-item>
+    
+  </form>
+  <footer>
+    <button ion-button block>Submit</button>
+  </footer>
+</ion-content>

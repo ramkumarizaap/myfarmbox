@@ -16,6 +16,7 @@ import { PincodeCheckPage } from './product-view/pincode-check/pincode-check';
 import { CartFooterPage } from './cart/footer/footer';
 import { PriceDetailsPage } from './cart/price-details/price-details';
 import { ProductListPage } from './cart/product-list/product-list';
+import { DeliveryAddressPage } from './cart/delivery-address/delivery-address';
 @NgModule({
   imports:[
     CommonModule,
@@ -34,9 +35,25 @@ import { ProductListPage } from './cart/product-list/product-list';
     PincodeCheckPage,
     CartFooterPage,
     PriceDetailsPage,
-    ProductListPage
+    ProductListPage,
+    DeliveryAddressPage,
   ],
-  declarations:[ExpandableHeader,ErrorPage,FilterPage,HeaderPage,FooterPage,ProductImages,ProductTitle,ProductInput,ProductDescription,PincodeCheckPage,CartFooterPage,PriceDetailsPage,ProductListPage],
+  declarations:[
+    ExpandableHeader,
+    ErrorPage,
+    FilterPage,
+    HeaderPage,
+    FooterPage,
+    ProductImages,
+    ProductTitle,
+    ProductInput,
+    ProductDescription,
+    PincodeCheckPage,
+    CartFooterPage,
+    PriceDetailsPage,
+    ProductListPage,
+    DeliveryAddressPage,
+  ],
 })
 export class SharedModule{
 }

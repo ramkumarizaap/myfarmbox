@@ -28,6 +28,8 @@ import { UserService } from '../services/user.service';
 
 import { PipesModule } from 'w-ng5';
 import { CheckoutPage } from '../pages/checkout/checkout';
+import { AddressListPage } from '../components/cart/address-list/address-list';
+import { AddAddressPage } from '../components/cart/add-address/add-address';
 @NgModule({
   declarations: [
     MyApp,
@@ -41,7 +43,9 @@ import { CheckoutPage } from '../pages/checkout/checkout';
     ProductListingPage,
     ProductViewPage,
     CartPage,
-    CheckoutPage
+    CheckoutPage,
+    AddressListPage,
+    AddAddressPage
   ],
   imports: [
     BrowserModule,
@@ -64,7 +68,9 @@ import { CheckoutPage } from '../pages/checkout/checkout';
     ProductListingPage,
     ProductViewPage,
     CartPage,
-    CheckoutPage
+    CheckoutPage,
+    AddressListPage,
+    AddAddressPage,
   ],
   providers: [
     StatusBar,

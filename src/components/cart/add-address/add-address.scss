@@ -1,0 +1,27 @@
+page-add-address{
+  footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+    button{
+      margin: 0 !important;
+      border-radius: none !important;
+      background: #f5a42b !important;
+    }
+  }
+  form{
+    overflow: auto;
+    max-height: 550px;
+  }
+  .error{
+    p{
+      color: #f5a42b;
+      padding: 5px 0px 0px 20px;
+    }
+    ion-label{
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+}
