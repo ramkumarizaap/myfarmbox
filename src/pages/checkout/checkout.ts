@@ -1,18 +1,22 @@
 import { Component } from '@angular/core';
 import { LoadingController,AlertController, NavController } from 'ionic-angular';
 import { AppSettingsService } from '../../services/app-settings.service';
-import { ProductService } from '../../services/product.service';
 import { UserService } from '../../services/user.service';
 import { CartService, CartSourceInterface } from '../../services/cart.service';
-import { CartPage } from '../cart/cart';
+import { HomePage } from '../home/home';
 @Component({
   selector: 'page-checkout',
   templateUrl: 'checkout.html'
 })
 export class CheckoutPage {
-  showTab: string = "personal";
-  items: CartSourceInterface = {};
   cartCount: number = 0;
+  items: CartSourceInterface = {
+    cart:null,
+    cartTotal:null,
+    cartItems:[],
+    cartTotalQty:null,
+    totalItems:null
+  };
   constructor(
     public alertCtrl: AlertController,
     public loader: LoadingController,
@@ -29,10 +33,10 @@ export class CheckoutPage {
       this.cartCount = res.totalItems;
     });
   }
-  nextStep(str:string){
-    this.showTab = str;
-  }
   
+  continueShop(){
+    this.nav.setRoot(HomePage);
+  }
   continuePayment(){
   }
 

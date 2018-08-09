@@ -31,10 +31,7 @@ export class CartPage {
     this.nav.setRoot(HomePage);
   }
 
-  removeItem(product: any){
-    console.log('Remove',product);
-    this.cart.remove(product);
-  }
+ 
   changeQty(product: any,qty){
     let newQty: number = qty.target.value;
     console.log('New Qty',qty);

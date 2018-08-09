@@ -27,6 +27,7 @@ import { CartService } from '../services/cart.service';
 import { UserService } from '../services/user.service';
 
 import { PipesModule } from 'w-ng5';
+import { CheckoutPage } from '../pages/checkout/checkout';
 @NgModule({
   declarations: [
     MyApp,
@@ -39,7 +40,8 @@ import { PipesModule } from 'w-ng5';
     ContactUs,
     ProductListingPage,
     ProductViewPage,
-    CartPage
+    CartPage,
+    CheckoutPage
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,8 @@ import { PipesModule } from 'w-ng5';
     ContactUs,
     ProductListingPage,
     ProductViewPage,
-    CartPage
+    CartPage,
+    CheckoutPage
   ],
   providers: [
     StatusBar,

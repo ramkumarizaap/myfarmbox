@@ -1,0 +1,27 @@
+page-price-details{
+  .price{
+    padding: 0 !important;
+    ion-label{
+      margin: 0 !important;
+    }
+    .item-inner,ion-label{
+      padding: 0 !important;
+    }
+    ion-title{
+      padding: 10px 0px 10px 0px;
+      border-bottom: 1px solid #ccc;
+      .toolbar-title-md{
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+    }
+
+    ion-grid{
+      font-size: 12px;
+      ion-col:last-child{
+        font-weight: bold;
+      }
+    }
+  }
+  
+}

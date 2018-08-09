@@ -1,0 +1,26 @@
+<ion-item class="product" *ngFor="let i of items.cartItems">
+  <div class="product-desc">
+    <ion-title>
+      {{i.name}}
+    </ion-title>
+    <p class="price"><span class="rupee-icon lg"></span>{{i.price}}</p>
+    <p class="delivery">Delivery in 7-8 days | Rs.50</p>
+  </div>
+  <div class="product-img">
+    <img src="../../assets/imgs/bg.jpg">
+      <select (change)="changeQty(i,$event)">
+        <option selected value="">Qty: {{i.orderedQuantity}}</option>
+        <option value="1">1</option><option value="2">2</option>
+        <option value="3">3</option><option value="4">4</option>
+        <option value="5">5</option><option value="6">6</option>
+        <option value="7">7</option><option value="8">8</option>
+        <option value="9">9</option><option value="10">10</option>
+      </select>
+  </div>
+  <div class="options">
+    <button block clear ion-button (click)="removeItem(i)">
+      <ion-icon name="ios-trash"></ion-icon>&nbsp;
+      Remove
+    </button>
+  </div>
+</ion-item>

@@ -1,0 +1,4 @@
+<footer  *ngIf="items.totalItems > 0">
+  <p pull-left item-left><span class="rupee-icon lg"></span>{{items.cartTotal}}</p>
+  <button ion-button (click)="gotoCheckout()" pull-right item-right>Continue</button>
+</footer>

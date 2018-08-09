@@ -1,0 +1,25 @@
+page-checkout{
+  ion-content{
+    background: #efefef !important;
+    }
+    ion-list ion-item{
+      box-shadow: 1px 5px 5px -4px #000 !important;
+      margin-bottom: 20px !important;
+    }
+    ion-list{
+      overflow: auto;
+      max-height: 550px;
+    }
+    
+    
+    .cart-empty{
+      text-align: center;
+      img{
+        margin-top: 30%;
+        width: 40%;
+      }
+      .shop-btn button{
+        background: #f5a42b !important;
+      }
+    }
+}
