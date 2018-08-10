@@ -331,35 +331,35 @@ Class Users extends AppController {
     */
 
 
-     public function shipping_settings_post()   
+     public function _shipping_settings_post()   
      {
          try
          {
-            $shipping_cost  = $this->post('shipping_cost');
+            $_shipping_cost  = $this->post('_shipping_cost');
             $key            = $this->post('key');
             $user_id        = $this->post('user_id');
 
-            if(!isset($shipping_cost)){
-                throw new Exception("INVALID_INPUT Shipping Cost");                
+            if(!isset($_shipping_cost)){
+                throw new Exception("INVALID_INPUT _Shipping Cost");                
             }
             $where  = array('key' => $key, 'user_id' => $user_id);
             $result = $this->users_model->get_where($where,"*","settings")->row_array();
             
             $ins_data = array();
-            $ins_data['value'] = $shipping_cost;
+            $ins_data['value'] = $_shipping_cost;
 
             if(count($result) === 0){
                 $ins_data['user_id'] = $user_id;
                 $ins_data['key']     = $key;
-                $new_shipping_settings= $this->users_model->insert($ins_data,"settings");
+                $_new_shipping_settings= $this->users_model->insert($ins_data,"settings");
             }
             else
             {
-                $new_shipping_settings= $this->users_model->update($where,$ins_data,"settings");
+                $_new_shipping_settings= $this->users_model->update($where,$ins_data,"settings");
             }
 
             $output['status']   = 'success';
-            $output['message']  = 'Shipping Cost Saved Successfully';
+            $output['message']  = '_Shipping Cost Saved Successfully';
          }
          catch(Exception $e){
             $output['status']   = 'error';
@@ -369,7 +369,7 @@ Class Users extends AppController {
          $this->response($output);
      }
 
-     public function shipping_settings_get()
+     public function _shipping_settings_get()
      {
          try
          {
@@ -381,10 +381,10 @@ Class Users extends AppController {
                 throw new Exception("INVALID_INPUT User ID");                
             }
             $where         = array('key' => $key, 'user_id' => $user_id);
-            $shipping_info = $this->users_model->get_where($where,"*","settings")->row_array();
+            $_shipping_info = $this->users_model->get_where($where,"*","settings")->row_array();
             
             $output['status']   = 'success';
-            $output['info']     = $shipping_info;
+            $output['info']     = $_shipping_info;
          }
          catch(Exception $e){
             $output['status']   = 'error';
@@ -601,5 +601,42 @@ Class Users extends AppController {
             $output['res'] = $this->post();
             $this->response($output);
         }
+
+public function getShippingAddresById_post()
+{
+    try
+    {
+        $output['status'] = "success";
+        
+        $get_address = $this->users_model->get_shipping_address();
+        if($get_address)
+        {
+            $i = 0;
+            $arr = array('_shipping_first_name','_shipping_last_name','_shipping_address_1',
+        '_shipping_address_2','_shipping_city','_shipping_state','_shipping_country',
+        '_shipping_postcode');
+            // $output['address'] = $get_address;
+            foreach($get_address as $value)
+            {
+                if( in_array ($value['meta_key'], $arr) )
+                {
+                    $key = substr($value['meta_key'],1);
+                    $address[$value['post_id']][$key] = $value['meta_value'];
+                }
+                $i++;
+            }
+            $output['address'] = $address;
+        }
+        else{
+            throw new Exception('No address found.');
+        }
+    }
+    catch(Exception $e)
+    {
+        $output['status'] = "error";
+        $output['message'] = $e->getMessage();
+    }
+    $this->response($output);
+}
     
 }

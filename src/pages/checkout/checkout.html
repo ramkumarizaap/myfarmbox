@@ -17,5 +17,8 @@
       <button ion-button>Continue Shopping</button>
     </div>
   </div>
-  <page-cart-footer></page-cart-footer>
+  <footer class="cart-footer"  *ngIf="items.totalItems > 0">
+    <p pull-left item-left><span class="rupee-icon lg"></span>{{items.cartTotal}}</p>
+    <button ion-button (click)="gotoPayment()" pull-right item-right>Continue</button>
+  </footer>
 </ion-content>

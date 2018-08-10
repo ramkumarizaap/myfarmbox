@@ -1,0 +1,30 @@
+page-payment{
+  ion-content{
+    background: #efefef !important;
+    }
+    ion-list ion-item{
+      .item-inner{
+        border: none !important;
+      }
+     ion-label{
+       white-space: normal;
+       font-size: 14px;
+     }
+    }
+    ion-list{
+      overflow: auto;
+      max-height: 550px;
+    }
+    
+    
+    .cart-empty{
+      text-align: center;
+      img{
+        margin-top: 30%;
+        width: 40%;
+      }
+      .shop-btn button{
+        background: #f5a42b !important;
+      }
+    }
+}

@@ -9,31 +9,21 @@
       <ion-icon name="ios-add"></ion-icon>&nbsp;&nbsp;
       Add Delivery Address</button>
   </ion-item>
-  <ion-list>
-    <ion-item>
-      <ion-label>
-        <span class="name">Daenerys Targaryen</span>
-        <p>H/79, S4, Mugil Apartments, Thiruvanmiyur.</p>
-      </ion-label>
-      <ion-radio item-start color="dark" checked="true"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <span class="name">Daenerys Targaryen</span>
-        <p>H/79, S4, Mugil Apartments, Thiruvanmiyur.</p>
-      </ion-label>
-      <ion-radio item-start color="dark" checked="true"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        <span class="name">Daenerys Targaryen</span>
-        <p>H/79, S4, Mugil Apartments, Thiruvanmiyur.</p>
-      </ion-label>
-      <ion-radio item-start color="dark" checked="true"></ion-radio>
-    </ion-item>
-  </ion-list>
+  <form [formGroup]="selAddressForm">
+    <ion-list radio-group *ngIf="address" formControlName = "selectedAddress" >
+      <ion-item *ngFor="let key of objectKeys(address)">
+        <ion-label>
+          <span class="name">{{address[key].shipping_first_name}} {{address[key].shipping_last_name}}</span>
+          <p>{{address[key].shipping_address_1}}, {{address[key].shipping_address_2}},
+          {{address[key].shipping_city}}, {{address[key].shipping_state}} - 
+          {{address[key].shipping_postcode}}</p>
+        </ion-label>
+        <ion-radio [value]="address[key]" item-start color="dark"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </form>
   <footer>
-    <button ion-button block>
+    <button ion-button block (click)="saveAddress()">
       Delivery Here
     </button>
   </footer>

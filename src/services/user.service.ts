@@ -63,6 +63,15 @@ export class UserService {
             http.
             post(this.baseURL+'api/users/checkPincode',httpOptions);
   } 
+  public getShippingAddress(pincode: number = null){
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json'}),
+      params: pincode
+    };
+    return this.
+            http.
+            post(this.baseURL+'api/users/getShippingAddresById',httpOptions);
+  }
 }
 export interface userInterface{
   userId:number;

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Payment</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="paymentForm">
+    <ion-list radio-group formControlName = "payment_type" >
+      <ion-item *ngFor="let p of payment_method">
+        <ion-label>
+          {{p.label}}
+        </ion-label>
+        <ion-radio [value]="p" item-start color="dark"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </form>
+  <page-price-details></page-price-details>
+  <footer class="cart-footer" *ngIf="items.totalItems > 0">
+    <p pull-left item-left><span class="rupee-icon lg"></span>{{items.cartTotal}}</p>
+    <button ion-button (click)="gotoPage()" pull-right item-right>Continue</button>
+  </footer>
+</ion-content>

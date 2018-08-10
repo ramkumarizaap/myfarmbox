@@ -38,12 +38,12 @@ export class AddAddressPage implements OnInit {
 
    saveAddress(){
      this.addressFormSubmitted = true;
-     //if(this.addressForm.valid)
-     //{
+     if(this.addressForm.valid)
+     {
+      this.orderService.insertProperty('shipping',this.addressForm.value);
        this.nav.pop();
-       this.orderService.insertProperty('shipping',this.addressForm.value);
        console.log('Add Order',this.order);
       //  this.addressValues.emit(this.addressForm.value);
-     //}
+     }
    }
 }

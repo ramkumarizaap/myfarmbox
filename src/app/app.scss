@@ -74,3 +74,29 @@ ion-header .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-
     background-size: 12px 12px;
     background-position: 5px 8px;
 }
+
+footer.cart-footer{
+    box-shadow: 0px 0px 5px -3px #000;
+    border: 1px solid #ddd;
+    width: 100%;
+    position: fixed;
+    background: #fff;
+    bottom: 0;
+    p{
+      width: 40%;
+      float: left;
+      font-size: 16px;
+      font-weight: bold;
+      padding-left: 10px;
+    }
+    button{
+      width: 50%;
+      float: right;
+      margin-top: 10px !important;
+      margin-right: 10px !important;
+      background: #f5a42b !important;
+      text-transform: capitalize !important;
+      font-weight: bold !important;
+      color: #fff;
+    }
+  }

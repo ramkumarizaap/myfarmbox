@@ -5,6 +5,7 @@ import { UserService } from '../../services/user.service';
 import { CartService, CartSourceInterface } from '../../services/cart.service';
 import { HomePage } from '../home/home';
 import { OrderService } from '../../services/order.service';
+import { PaymentPage } from '../payment/payment';
 @Component({
   selector: 'page-checkout',
   templateUrl: 'checkout.html'
@@ -29,6 +30,7 @@ export class CheckoutPage {
   ){
     this.loadCart();
     this.loadLineItems();
+    this.loadOrder();
   }
 
   loadLineItems(){
@@ -43,6 +45,11 @@ export class CheckoutPage {
     }
     this.orderService.insertProperty('line_items',pro);
   }
+  loadOrder(){
+    this.orderService.order$.subscribe((res)=>{
+      console.log('order',res);
+    });
+  }
 
   loadCart(){
     this.cart.cart$.subscribe((res)=>{
@@ -51,11 +58,13 @@ export class CheckoutPage {
       console.log('Checkout',this.items);
     });
   }
-  
+
+  gotoPayment(){
+    this.nav.push(PaymentPage);
+  }
   continueShop(){
     this.nav.setRoot(HomePage);
   }
-  continuePayment(){
-  }
+  
 
 }

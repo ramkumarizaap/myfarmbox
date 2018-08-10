@@ -31,6 +31,7 @@ import { CheckoutPage } from '../pages/checkout/checkout';
 import { AddressListPage } from '../components/cart/address-list/address-list';
 import { AddAddressPage } from '../components/cart/add-address/add-address';
 import { OrderService } from '../services/order.service';
+import { PaymentPage } from '../pages/payment/payment';
 @NgModule({
   declarations: [
     MyApp,
@@ -46,7 +47,8 @@ import { OrderService } from '../services/order.service';
     CartPage,
     CheckoutPage,
     AddressListPage,
-    AddAddressPage
+    AddAddressPage,
+    PaymentPage
   ],
   imports: [
     BrowserModule,
@@ -72,6 +74,7 @@ import { OrderService } from '../services/order.service';
     CheckoutPage,
     AddressListPage,
     AddAddressPage,
+    PaymentPage
   ],
   providers: [
     StatusBar,

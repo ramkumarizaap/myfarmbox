@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { CartService, CartSourceInterface } from '../../services/cart.service';
+import { CheckoutPage } from '../checkout/checkout';
 @Component({
   selector: 'page-cart',
   templateUrl: 'cart.html'
@@ -26,7 +27,9 @@ export class CartPage {
       }
   });
   }
-
+  gotoPage(){
+    this.nav.push(CheckoutPage);
+  }
   continueShop(){
     this.nav.setRoot(HomePage);
   }

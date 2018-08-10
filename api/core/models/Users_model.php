@@ -8,7 +8,12 @@ class Users_model extends App_model
     parent::__construct();
     $this->_table = 'sales_order';
   }
-
+  function get_shipping_address()
+  {
+    $this->db->like('meta_key','_shipping_');
+    $q = $this->db->get('wp_postmeta');
+    return $q->result_array();
+  }
   function get_monthly_report()
   { 
   	
