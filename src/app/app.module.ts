@@ -30,6 +30,7 @@ import { PipesModule } from 'w-ng5';
 import { CheckoutPage } from '../pages/checkout/checkout';
 import { AddressListPage } from '../components/cart/address-list/address-list';
 import { AddAddressPage } from '../components/cart/add-address/add-address';
+import { OrderService } from '../services/order.service';
 @NgModule({
   declarations: [
     MyApp,
@@ -77,6 +78,7 @@ import { AddAddressPage } from '../components/cart/add-address/add-address';
     AppSettingsService,
     ProductService,
     CartService,
+    OrderService,
     UserService,
     SplashScreen,
     InAppBrowser,

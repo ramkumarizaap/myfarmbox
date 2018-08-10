@@ -18,7 +18,7 @@ import { AddAddressPage } from '../components/cart/add-address/add-address';
 export class MyApp implements OnInit {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = AddAddressPage;
+  rootPage: any = HomePage;
 
   pages: Array<{title: string, component: any,icon:string}>;
 
