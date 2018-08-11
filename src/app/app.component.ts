@@ -11,7 +11,6 @@ import { AboutUs } from '../pages/about-us/about-us';
 import { WhatWeDeliver } from '../pages/what-we-deliver/what-we-deliver';
 import { ContactUs } from '../pages/contact-us/contact-us';
 import { ProductService } from '../services/product.service'; 
-import { AddAddressPage } from '../components/cart/add-address/add-address';
 @Component({
   templateUrl: 'app.html'
 })

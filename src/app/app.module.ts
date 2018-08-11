@@ -32,6 +32,7 @@ import { AddressListPage } from '../components/cart/address-list/address-list';
 import { AddAddressPage } from '../components/cart/add-address/add-address';
 import { OrderService } from '../services/order.service';
 import { PaymentPage } from '../pages/payment/payment';
+import { PaymentResultPage } from '../pages/payment-result/payment-result';
 @NgModule({
   declarations: [
     MyApp,
@@ -48,7 +49,8 @@ import { PaymentPage } from '../pages/payment/payment';
     CheckoutPage,
     AddressListPage,
     AddAddressPage,
-    PaymentPage
+    PaymentPage,
+    PaymentResultPage
   ],
   imports: [
     BrowserModule,
@@ -74,7 +76,8 @@ import { PaymentPage } from '../pages/payment/payment';
     CheckoutPage,
     AddressListPage,
     AddAddressPage,
-    PaymentPage
+    PaymentPage,
+    PaymentResultPage
   ],
   providers: [
     StatusBar,

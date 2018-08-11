@@ -13,10 +13,10 @@
     <ion-list radio-group *ngIf="address" formControlName = "selectedAddress" >
       <ion-item *ngFor="let key of objectKeys(address)">
         <ion-label>
-          <span class="name">{{address[key].shipping_first_name}} {{address[key].shipping_last_name}}</span>
-          <p>{{address[key].shipping_address_1}}, {{address[key].shipping_address_2}},
-          {{address[key].shipping_city}}, {{address[key].shipping_state}} - 
-          {{address[key].shipping_postcode}}</p>
+          <span class="name">{{address[key].first_name}} {{address[key].last_name}}</span>
+          <p>{{address[key].address_1}}, {{address[key].address_2}},
+          {{address[key].city}}, {{address[key].state}} - 
+          {{address[key].postcode}}</p>
         </ion-label>
         <ion-radio [value]="address[key]" item-start color="dark"></ion-radio>
       </ion-item>

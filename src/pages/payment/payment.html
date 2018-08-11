@@ -17,6 +17,6 @@
   <page-price-details></page-price-details>
   <footer class="cart-footer" *ngIf="items.totalItems > 0">
     <p pull-left item-left><span class="rupee-icon lg"></span>{{items.cartTotal}}</p>
-    <button ion-button (click)="gotoPage()" pull-right item-right>Continue</button>
+    <button ion-button (click)="savePaymentForm()" pull-right item-right>Continue</button>
   </footer>
 </ion-content>

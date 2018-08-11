@@ -59,7 +59,7 @@
             <img class="alignnone size-large wp-image-2467" [src]="box.images[0].src" alt="">
           </div>
           <p class="desc" [innerHTML]="box.short_description"></p>
-          <button class="btn pack-btn">Choose Pack <ion-icon name="ios-arrow-round-forward"></ion-icon></button>
+          <button (click)="openProduct(box.id)" class="btn pack-btn">Choose Pack <ion-icon name="ios-arrow-round-forward"></ion-icon></button>
         </ion-item>
       </ion-list>
     </div>

@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Order #{{result.id}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+    <img src="{{baseURL}}src/assets/icon/success.png">
+    <p><strong>Success!</strong> Your Order has been placed.</p>
+    <button ion-button (click)="gotoHome()" class="shop-btn">Continue Shopping</button>
+  </ion-item>
+</ion-content>

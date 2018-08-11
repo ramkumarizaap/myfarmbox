@@ -8,6 +8,10 @@ page-address-list{
       margin: 0 !important;
     }
   }
+  form{
+    max-height: 500px;
+    overflow: auto;
+  }
   .list-md .item-block .item-inner{
     border-bottom: none !important;
   }

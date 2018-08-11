@@ -5,12 +5,12 @@ export class AppSettingsService {
   private apiUrl:string;
   private baseUrl:string;
   constructor() { 
-    this.apiUrl = 'http://localhost/myfarmbox/api';
+    /*this.apiUrl = 'http://localhost/myfarmbox/api';
     this.baseUrl = 'http://localhost/myfarmbox/';
-    if (location.href.indexOf('myfarmbox') !== -1) {
+    if (location.href.indexOf('myfarmbox') !== -1) {*/
       this.apiUrl = 'https://myfarmbox.in/api';
       this.baseUrl = 'https://myfarmbox.in/';
-   }
+  /* }*/
   }
 
   /**

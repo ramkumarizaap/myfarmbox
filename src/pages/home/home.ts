@@ -1,11 +1,12 @@
 import { Component,ViewChild, OnInit } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController, LoadingController } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Slides } from 'ionic-angular';
 import { AppSettingsService } from '../../services/app-settings.service';
 
 import { ProductService } from '../../services/product.service';
 import { ProductListingPage } from '../product-listing/product-listing';
+import { ProductViewPage } from '../product-view/product-view';
 
 @Component({
   selector: 'page-home',
@@ -17,9 +18,11 @@ export class HomePage implements OnInit {
   public baseURL: string = "";
   vegBoxes: any = [];
   allProducts: any = [];
+  tmp: any;
   constructor(private appSettings: AppSettingsService,
               public navCtrl: NavController,
               private iab: InAppBrowser,
+              public loader: LoadingController,
             private productService: ProductService) {
        this.baseURL = this.appSettings.getBaseUrl();
       
@@ -29,6 +32,10 @@ export class HomePage implements OnInit {
     this.loadProducts();
   }
   loadProducts(){
+    let load = this.loader.create({
+      content:'Please Wait...'
+    });
+    load.present();
     this.productService.mappedProducts$.subscribe((res)=>{
      this.allProducts  = this.productService.getSearchProducts();
       console.log('Mapped Products',res);
@@ -37,9 +44,13 @@ export class HomePage implements OnInit {
         let resp: any = res;
         resp.forEach(element => {
           if(element.name === "Boxes"){
-            this.vegBoxes = element.products;
+            this.tmp = element.products;
           }
         });
+        setTimeout(()=>{
+          load.dismiss();
+          this.vegBoxes = this.tmp;
+        },2000);
         console.log('Veg Boxes',this.vegBoxes);
       }
     });
@@ -56,5 +67,8 @@ export class HomePage implements OnInit {
    goPages(page:string){
     this.navCtrl.setRoot(ProductListingPage,{name:page});
    }
-  
+   openProduct(id:number){
+    console.log('Product Id',id);
+    this.navCtrl.push(ProductViewPage,{id:id});
+  }
 }

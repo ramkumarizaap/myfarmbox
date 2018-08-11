@@ -1,19 +1,23 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient, HttpParams,  HttpHeaders } from '@angular/common/http';
 import {  BehaviorSubject } from 'rxjs';
 // import { map,mergeMap,catchError } from "rxjs/operators";
+import { AppSettingsService } from './app-settings.service';
 
 @Injectable()
 export class OrderService {
 
   private order: OrderInterface = {};
   // source for observable
+  public baseURL: string = "";
   private orderSource: BehaviorSubject<OrderSourceInterface> = new BehaviorSubject(null);
   // observable stream
   public order$ = this.orderSource.asObservable();
 
 
-  constructor() { }
+  constructor(private http: HttpClient,private appSettings: AppSettingsService) {
+    this.baseURL = this.appSettings.getBaseUrl();
+   }
 
   public insertProperty(type:string,data: any){
     //if(this.order.hasOwnProperty(type)){
@@ -125,6 +129,16 @@ export class OrderService {
       this.orderSource.next(SourceData);
       resolve(true);
     });
+  }
+
+  public createOrder(params:any){
+    /*const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json'}),
+      params: params
+    };*/
+    return this.
+            http.
+            post(this.baseURL+'wp-json/wc/v2/orders',params);
   }
 }
 export interface OrderInterface{
